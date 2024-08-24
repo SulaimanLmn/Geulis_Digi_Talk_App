@@ -1,19 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 import 'package:geulis_digitalk/widgets/resigter_text_field.dart';
+import 'package:geulis_digitalk/widgets/sign_in_icon.dart';
 import 'package:geulis_digitalk/widgets/text_field_password.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   final bool _isObscure = true;
-  bool _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 "Welcome to us,",
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 30,
                     color: textColor,
                     fontWeight: FontWeight.bold),
               ),
@@ -38,9 +37,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 10,
               ),
               const Text(
-                "Hello there, please create new account",
+                "Hello there, please login with your account",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
+                  fontSize: 15,
                 ),
               ),
               const SizedBox(
@@ -49,8 +49,8 @@ class _RegisterPageState extends State<RegisterPage> {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  width: 170,
-                  height: 180,
+                  width: 220,
+                  height: 220,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/images/register_icon.png"),
@@ -67,64 +67,63 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 15,
               ),
-              const ResigterTextField(
-                hintText: "Email",
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const ResigterTextField(
-                hintText: "Phone Number",
-              ),
-              const SizedBox(
-                height: 15,
-              ),
               TextFieldPassword(isObscure: _isObscure),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  "Forgot password?",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(fontSize: 15, color: forgotPasswordColor),
+                ),
+              ),
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                children: [
-                  Transform.scale(
-                    scale: 1.2,
-                    child: Checkbox(
-                      side: BorderSide(color: textFieldColor),
-                      activeColor: textColor,
-                      value: _isChecked,
-                      onChanged: (_) => setState(
-                        () {
-                          _isChecked = !_isChecked;
-                        },
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: buttonColor,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
                       ),
                     ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text("By creating an account you agree to our"),
-                      Text(
-                        "Term and Conditions",
-                        style: TextStyle(
-                            color: textColor, fontWeight: FontWeight.w600),
-                      )
-                    ],
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                ],
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
+              Container(
                 width: double.infinity,
-                height: 50,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(backgroundColor: buttonColor),
-                  child: const Text(
-                    "Register",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                alignment: Alignment.center,
+                child: const Text(
+                  "Or Sign in With",
+                  style: TextStyle(fontSize: 17),
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SignInIcon(imageUrl: "assets/images/goggle_icon.png"),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  SignInIcon(imageUrl: "assets/images/facebook_icon.png")
+                ],
               ),
               const SizedBox(
                 height: 20,
@@ -132,18 +131,18 @@ class _RegisterPageState extends State<RegisterPage> {
               Align(
                 alignment: Alignment.center,
                 child: SizedBox(
-                  width: 180,
+                  width: 270,
                   height: 50,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const Text(
-                        "Have Account?",
+                        "Dont have an account?",
                         style: TextStyle(fontSize: 17),
                       ),
                       Text(
-                        "Login",
+                        "Register",
                         style: TextStyle(color: textColor, fontSize: 17),
                       )
                     ],

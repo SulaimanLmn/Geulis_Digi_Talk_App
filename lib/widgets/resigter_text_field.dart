@@ -9,7 +9,7 @@ class ResigterTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 40,
+      height: 45,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -23,7 +23,7 @@ class ResigterTextField extends StatelessWidget {
           hintStyle: TextStyle(fontSize: 15, color: textFieldColor),
           border: InputBorder.none,
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              const EdgeInsets.symmetric(vertical: 11, horizontal: 20),
         ),
       ),
     );
