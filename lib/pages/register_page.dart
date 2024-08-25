@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
-import 'package:geulis_digitalk/widgets/resigter_text_field.dart';
+import 'package:geulis_digitalk/widgets/register_text_field.dart';
 import 'package:geulis_digitalk/widgets/text_field_password.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 "Welcome to us,",
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 30,
                     color: textColor,
                     fontWeight: FontWeight.bold),
               ),
@@ -41,6 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 "Hello there, please create new account",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
+                  fontSize: 15,
                 ),
               ),
               const SizedBox(
@@ -49,8 +50,8 @@ class _RegisterPageState extends State<RegisterPage> {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  width: 170,
-                  height: 180,
+                  width: 220,
+                  height: 220,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/images/register_icon.png"),
@@ -61,19 +62,19 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 15,
               ),
-              const ResigterTextField(
+              const RegisterTextField(
                 hintText: "Username",
               ),
               const SizedBox(
                 height: 15,
               ),
-              const ResigterTextField(
+              const RegisterTextField(
                 hintText: "Email",
               ),
               const SizedBox(
                 height: 15,
               ),
-              const ResigterTextField(
+              const RegisterTextField(
                 hintText: "Phone Number",
               ),
               const SizedBox(
@@ -116,13 +117,20 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               SizedBox(
                 width: double.infinity,
-                height: 50,
+                height: 60,
                 child: TextButton(
                   onPressed: () {},
-                  style: TextButton.styleFrom(backgroundColor: buttonColor),
+                  style: TextButton.styleFrom(
+                    backgroundColor: buttonColor,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                  ),
                   child: const Text(
                     "Register",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
               ),
@@ -132,19 +140,24 @@ class _RegisterPageState extends State<RegisterPage> {
               Align(
                 alignment: Alignment.center,
                 child: SizedBox(
-                  width: 180,
+                  width: 200,
                   height: 50,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const Text(
-                        "Have Account?",
+                        "Have an account?",
                         style: TextStyle(fontSize: 17),
                       ),
-                      Text(
-                        "Login",
-                        style: TextStyle(color: textColor, fontSize: 17),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/loginpage');
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(color: textColor, fontSize: 17),
+                        ),
                       )
                     ],
                   ),

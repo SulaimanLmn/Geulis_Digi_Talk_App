@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 
-class ResigterTextField extends StatelessWidget {
+class RegisterTextField extends StatelessWidget {
   final String hintText;
-  const ResigterTextField({super.key, required this.hintText});
+  const RegisterTextField({super.key, required this.hintText});
 
   @override
   Widget build(BuildContext context) {

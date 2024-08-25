@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
-import 'package:geulis_digitalk/widgets/resigter_text_field.dart';
+import 'package:geulis_digitalk/widgets/register_text_field.dart';
 import 'package:geulis_digitalk/widgets/sign_in_icon.dart';
 import 'package:geulis_digitalk/widgets/text_field_password.dart';
 
@@ -61,11 +61,11 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 15,
               ),
-              const ResigterTextField(
+              const RegisterTextField(
                 hintText: "Username",
               ),
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               TextFieldPassword(isObscure: _isObscure),
               const SizedBox(
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
               Container(
                 width: double.infinity,
@@ -138,12 +138,17 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const Text(
-                        "Dont have an account?",
+                        "Don't have an account?",
                         style: TextStyle(fontSize: 17),
                       ),
-                      Text(
-                        "Register",
-                        style: TextStyle(color: textColor, fontSize: 17),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/registerpage');
+                        },
+                        child: Text(
+                          "Register",
+                          style: TextStyle(color: textColor, fontSize: 17),
+                        ),
                       )
                     ],
                   ),
