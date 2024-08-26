@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:geulis_digitalk/pages/home_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geulis_digitalk/bloc/page_nav_bar_bloc.dart';
 import 'package:geulis_digitalk/pages/login_page.dart';
+import 'package:geulis_digitalk/pages/nav_page.dart';
+import 'package:geulis_digitalk/pages/product_detail_page.dart';
 import 'package:geulis_digitalk/pages/register_page.dart';
 
 void main() {
@@ -12,19 +15,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => PageNavBarBloc(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const LoginPage(),
+        routes: {
+          '/loginpage': (context) => const LoginPage(),
+          '/registerpage': (context) => const RegisterPage(),
+          '/navpage': (context) => NavPage(),
+          '/productdetailpage': (context) => const ProductDetailPage(),
+        },
       ),
-      home: const HomePage(),
-      routes: {
-        '/loginpage': (context) => const LoginPage(),
-        '/registerpage': (context) => const RegisterPage(),
-        '/homepage': (context) => const HomePage(),
-      },
     );
   }
 }

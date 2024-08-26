@@ -58,7 +58,7 @@ class _ProductSectionState extends State<ProductSection> {
         ),
         SizedBox(
           width: double.infinity,
-          height: 300,
+          height: 245,
           child: GridView.builder(
             itemCount: product.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -117,7 +117,10 @@ class _ProductSectionState extends State<ProductSection> {
                                 borderRadius: BorderRadius.circular(15),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed('/productdetailpage');
+                            },
                             child: const Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 0),

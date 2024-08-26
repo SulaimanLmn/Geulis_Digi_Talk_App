@@ -86,7 +86,9 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 height: 60,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/navpage');
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: buttonColor,
                     shape: const RoundedRectangleBorder(
