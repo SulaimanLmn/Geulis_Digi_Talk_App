@@ -42,6 +42,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   # State Management
   flutter_bloc: ^8.1.6
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:

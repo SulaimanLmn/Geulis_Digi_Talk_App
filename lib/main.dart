@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geulis_digitalk/bloc/page_nav_bar_bloc.dart';
+import 'package:geulis_digitalk/pages/cart_page.dart';
 import 'package:geulis_digitalk/pages/login_page.dart';
 import 'package:geulis_digitalk/pages/nav_page.dart';
 import 'package:geulis_digitalk/pages/product_detail_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
           '/registerpage': (context) => const RegisterPage(),
           '/navpage': (context) => NavPage(),
           '/productdetailpage': (context) => const ProductDetailPage(),
+          '/cartpage': (context) => const CartPage(),
         },
       ),
     );

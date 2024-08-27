@@ -137,7 +137,7 @@ class ProductDetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7,
                       ),
                       Expanded(
@@ -149,8 +149,10 @@ class ProductDetailPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
-                          onPressed: () {},
-                          child: Text(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/cartpage');
+                          },
+                          child: const Text(
                             "BUY NOW",
                             style: TextStyle(
                                 color: Colors.white,

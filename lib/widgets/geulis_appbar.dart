@@ -13,13 +13,11 @@ class GeulisAppBar extends StatelessWidget {
           IconlyLight.notification,
           size: 30,
         ),
-        Container(
-          width: 50,
-          height: 50,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/Geulis.png"),
-            ),
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Transform.scale(
+            scale: 1.2,
+            child: Image.asset("assets/images/Geulis.png"),
           ),
         ),
         const SizedBox(

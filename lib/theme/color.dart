@@ -10,3 +10,5 @@ Color homePageButtonColor = const Color(0xffFBD2D6);
 Color searchColor = const Color.fromARGB(79, 235, 235, 237);
 Color searchHintColor = const Color.fromARGB(70, 0, 0, 0);
 Color productDescColor = const Color(0xff000000);
+Color cartProductBorderColor = const Color.fromARGB(13, 158, 158, 158);
+Color productCartNameColor = const Color.fromARGB(138, 0, 0, 0);
