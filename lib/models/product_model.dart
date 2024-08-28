@@ -5,6 +5,7 @@ class ProductModel {
   String productName;
   int price;
   String productType;
+  int quantity;
 
   ProductModel(
       {required this.image,
@@ -12,7 +13,8 @@ class ProductModel {
       required this.brandName,
       required this.productName,
       required this.price,
-      required this.productType});
+      required this.productType,
+      this.quantity = 1});
 
   static List<ProductModel> getAllProducts() {
     List<ProductModel> products = [

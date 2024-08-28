@@ -99,7 +99,9 @@ class CartPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/checkoutpage');
+                          },
                           child: const Text(
                             "Checkout",
                             style: TextStyle(

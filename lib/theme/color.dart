@@ -12,3 +12,4 @@ Color searchHintColor = const Color.fromARGB(70, 0, 0, 0);
 Color productDescColor = const Color(0xff000000);
 Color cartProductBorderColor = const Color.fromARGB(13, 158, 158, 158);
 Color productCartNameColor = const Color.fromARGB(138, 0, 0, 0);
+Color voucherBorderColor = const Color.fromARGB(21, 158, 158, 158);

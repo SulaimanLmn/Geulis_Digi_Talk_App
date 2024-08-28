@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 import 'package:geulis_digitalk/widgets/register_text_field.dart';
