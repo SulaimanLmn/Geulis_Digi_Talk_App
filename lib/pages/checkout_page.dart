@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
+import 'package:geulis_digitalk/widgets/back_button.dart';
 import 'package:geulis_digitalk/widgets/geulis_appbar.dart';
 import 'package:geulis_digitalk/widgets/product_checkout_item.dart';
 
@@ -19,39 +20,9 @@ class CheckoutPage extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: textColor,
-                        ),
-                        Text(
-                          "Back",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                              color: textColor),
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 85,
-                  ),
-                  Text(
-                    "Checkout",
-                    style: TextStyle(
-                        color: textColor,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w700),
-                  ),
-                ],
+              const BackToButton(
+                width: 85,
+                text: "Checkout",
               ),
               const SizedBox(
                 height: 20,
@@ -148,7 +119,7 @@ class CheckoutPage extends StatelessWidget {
                       const SizedBox(
                         height: 15,
                       ),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 150,
                         child: ListView.separated(

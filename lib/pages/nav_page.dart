@@ -22,6 +22,7 @@ class NavPage extends StatelessWidget {
     return BlocBuilder<PageNavBarBloc, int>(
       builder: (context, curentIndex) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           body: pages[curentIndex],
           floatingActionButton: FloatingActionButton(
             onPressed: () {},

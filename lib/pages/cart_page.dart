@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/theme/color.dart';
+import 'package:geulis_digitalk/widgets/back_button.dart';
 import 'package:geulis_digitalk/widgets/geulis_appbar.dart';
 import 'package:geulis_digitalk/widgets/product_cart_item.dart';
 
@@ -18,39 +19,9 @@ class CartPage extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: textColor,
-                        ),
-                        Text(
-                          "Back",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                              color: textColor),
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 65,
-                  ),
-                  Text(
-                    "My Shopping Bag",
-                    style: TextStyle(
-                        color: textColor,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w700),
-                  )
-                ],
+              const BackToButton(
+                text: "My Shopping Bag",
+                width: 60,
               ),
               Expanded(
                 child: Container(

@@ -13,3 +13,5 @@ Color productDescColor = const Color(0xff000000);
 Color cartProductBorderColor = const Color.fromARGB(13, 158, 158, 158);
 Color productCartNameColor = const Color.fromARGB(138, 0, 0, 0);
 Color voucherBorderColor = const Color.fromARGB(21, 158, 158, 158);
+Color profileDividerColor = const Color.fromARGB(144, 235, 235, 237);
+Color profileIconColor = const Color.fromARGB(83, 251, 210, 214);

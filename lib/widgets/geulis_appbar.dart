@@ -14,7 +14,7 @@ class GeulisAppBar extends StatelessWidget {
           size: 30,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 15),
+          padding: const EdgeInsets.only(left: 25),
           child: Transform.scale(
             scale: 1.2,
             child: Image.asset("assets/images/Geulis.png"),
