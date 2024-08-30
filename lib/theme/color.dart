@@ -15,3 +15,5 @@ Color productCartNameColor = const Color.fromARGB(138, 0, 0, 0);
 Color voucherBorderColor = const Color.fromARGB(21, 158, 158, 158);
 Color profileDividerColor = const Color.fromARGB(144, 235, 235, 237);
 Color profileIconColor = const Color.fromARGB(83, 251, 210, 214);
+Color paymentTextColor = const Color(0xff939393);
+Color paymentBorderColor = const Color.fromARGB(115, 147, 147, 147);

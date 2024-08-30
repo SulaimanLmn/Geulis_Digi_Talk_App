@@ -86,7 +86,7 @@ class CheckoutPage extends StatelessWidget {
                             const Text(
                               "% Reedeem Voucher",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w800, fontSize: 23),
+                                  fontWeight: FontWeight.w800, fontSize: 22),
                             ),
                             const Spacer(),
                             IconButton(
@@ -163,11 +163,12 @@ class CheckoutPage extends StatelessWidget {
                             const Text(
                               "Select Payment Method",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w800, fontSize: 23),
+                                  fontWeight: FontWeight.w800, fontSize: 22),
                             ),
                             const Spacer(),
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () => Navigator.of(context)
+                                    .pushNamed('/paymentpage'),
                                 icon: const Icon(Icons.arrow_forward_ios))
                           ],
                         ),

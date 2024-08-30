@@ -128,7 +128,8 @@ class ProductDetailPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed('/cartpage'),
                           icon: Transform.scale(
                             scale: 1.4,
                             child: const Icon(

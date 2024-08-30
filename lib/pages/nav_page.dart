@@ -30,13 +30,9 @@ class NavPage extends StatelessWidget {
             elevation: 0,
             enableFeedback: false,
             shape: const CircleBorder(),
-            child: InkWell(
-              highlightColor: Colors.transparent,
-              splashColor: Colors.transparent,
-              child: Transform.scale(
-                scale: 1.2,
-                child: Image.asset("assets/images/scan-face-icon.png"),
-              ),
+            child: Transform.scale(
+              scale: 1.2,
+              child: Image.asset("assets/images/scan-face-icon.png"),
             ),
           ),
           floatingActionButtonLocation:

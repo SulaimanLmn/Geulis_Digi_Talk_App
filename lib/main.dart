@@ -5,6 +5,7 @@ import 'package:geulis_digitalk/pages/cart_page.dart';
 import 'package:geulis_digitalk/pages/checkout_page.dart';
 import 'package:geulis_digitalk/pages/login_page.dart';
 import 'package:geulis_digitalk/pages/nav_page.dart';
+import 'package:geulis_digitalk/pages/payment_page.dart';
 import 'package:geulis_digitalk/pages/product_detail_page.dart';
 import 'package:geulis_digitalk/pages/register_page.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => PageNavBarBloc(),
-        )
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           '/productdetailpage': (context) => const ProductDetailPage(),
           '/cartpage': (context) => const CartPage(),
           '/checkoutpage': (context) => const CheckoutPage(),
+          '/paymentpage': (context) => const PaymentPage()
         },
       ),
     );
