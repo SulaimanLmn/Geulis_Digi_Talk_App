@@ -238,10 +238,13 @@ class CheckoutPage extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: buttonColor,
-                      shape: ContinuousRectangleBorder(
-                          borderRadius: BorderRadius.circular(30))),
-                  onPressed: () {},
+                    backgroundColor: buttonColor,
+                    shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onPressed: () =>
+                      Navigator.of(context).pushNamed('/packagingpage'),
                   child: const Text(
                     "PLACE ORDER",
                     style: TextStyle(color: Colors.white, fontSize: 25),

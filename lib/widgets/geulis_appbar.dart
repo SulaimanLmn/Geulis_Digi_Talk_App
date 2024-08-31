@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconly/iconly.dart';
 
 class GeulisAppBar extends StatelessWidget {
@@ -20,17 +21,20 @@ class GeulisAppBar extends StatelessWidget {
             child: Image.asset("assets/images/Geulis.png"),
           ),
         ),
-        const SizedBox(
+        SizedBox(
           child: Row(
             children: [
-              Icon(
-                IconlyLight.bag_2,
-                size: 30,
+              GestureDetector(
+                onTap: () => Navigator.of(context).pushNamed('/cartpage'),
+                child: const Icon(
+                  IconlyLight.bag_2,
+                  size: 30,
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              Icon(
+              const Icon(
                 IconlyLight.heart,
                 size: 30,
               )

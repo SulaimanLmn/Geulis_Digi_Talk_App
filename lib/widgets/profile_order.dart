@@ -43,16 +43,21 @@ class ProfileOrder extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: profileIconColor,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Transform.scale(
-                      scale: 1.2,
-                      child: Image.asset('assets/images/profile-packages.png'),
+                  GestureDetector(
+                    onTap: () =>
+                        Navigator.of(context).pushNamed('/packagingpage'),
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: profileIconColor,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Transform.scale(
+                        scale: 1.2,
+                        child:
+                            Image.asset('assets/images/profile-packages.png'),
+                      ),
                     ),
                   ),
                   const SizedBox(

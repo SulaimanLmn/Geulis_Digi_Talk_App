@@ -1,6 +1,7 @@
 # Geulis DigiTalk App
 
-A new Flutter project.
+Design: [@mhanifibrahim76](https://github.com/mhanifibrahim76)  
+Code: Me
 
 ## Getting Started
 
