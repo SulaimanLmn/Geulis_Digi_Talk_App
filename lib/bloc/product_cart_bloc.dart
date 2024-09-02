@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geulis_digitalk/models/cart_data.dart';
 import 'package:geulis_digitalk/models/product_model.dart';
 
 sealed class ProductCartEvent {}
@@ -17,7 +18,7 @@ class ProductCartBloc extends Bloc<ProductCartEvent, List<ProductModel>> {
   ProductCartBloc() : super([]) {
     on<ProductCartAdded>(
       (event, emit) {
-        emit(List<ProductModel>.from(state)..add(event.products));
+        cartItems.add(event.products);
       },
     );
 

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:geulis_digitalk/models/product_model.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 import 'package:geulis_digitalk/widgets/product_detail_review.dart';
 import 'package:iconly/iconly.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  const ProductDetailPage({super.key});
+  const ProductDetailPage({super.key, required this.productData});
+  final ProductModel productData;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +31,9 @@ class ProductDetailPage extends StatelessWidget {
             height: 200,
             alignment: Alignment.center,
             child: Transform.scale(
-              scale: 1.2,
+              scale: 2.5,
               child: Image.asset(
-                "assets/images/product-detail-skintific.png",
+                productData.image,
               ),
             ),
           ),
@@ -40,17 +42,17 @@ class ProductDetailPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   children: [
                     Expanded(
                       child: Text(
-                        "SKEENTIPIK",
-                        style: TextStyle(fontSize: 20),
+                        productData.brandName,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                     Text(
-                      "Rp 120.000",
-                      style: TextStyle(
+                      "Rp.${productData.price}",
+                      style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 20,
                       ),
@@ -58,18 +60,17 @@ class ProductDetailPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 15),
-                const Text(
-                  "5x Ceramide Moisturizer",
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
+                Text(
+                  productData.productName,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w800, fontSize: 20),
                 ),
                 const SizedBox(height: 10),
                 const Text(
                   "Details",
                   style: TextStyle(fontWeight: FontWeight.w800),
                 ),
-                const Text(
-                  "Nikmati kulit yang lebih sehat dan bercahaya dengan Skintific Hydrating Face Serum. Serum wajah ini dirancang khusus untuk memberikan hidrasi mendalam dan memperbaiki tekstur kulit Anda.",
-                ),
+                Text(productData.description),
                 const SizedBox(height: 10),
                 const Text(
                   "Review",

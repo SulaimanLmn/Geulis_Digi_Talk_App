@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geulis_digitalk/models/product_model.dart';
+import 'package:geulis_digitalk/pages/product_detail_page.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 
 class ProductSection extends StatefulWidget {
@@ -100,7 +101,7 @@ class _ProductSectionState extends State<ProductSection> {
                         ),
                       ),
                       Text(
-                        'Rp ${product[index].price}',
+                        'Rp. ${product[index].price}',
                         maxLines: 1,
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
@@ -118,8 +119,10 @@ class _ProductSectionState extends State<ProductSection> {
                               ),
                             ),
                             onPressed: () {
-                              Navigator.of(context)
-                                  .pushNamed('/productdetailpage');
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ProductDetailPage(
+                                    productData: product[index]),
+                              ));
                             },
                             child: const Padding(
                               padding: EdgeInsets.symmetric(
