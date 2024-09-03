@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geulis_digitalk/bloc/product_cart_bloc.dart';
 import 'package:geulis_digitalk/models/product_model.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 import 'package:geulis_digitalk/widgets/product_detail_review.dart';
@@ -152,6 +154,9 @@ class ProductDetailPage extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
+                            context
+                                .read<ProductCartBloc>()
+                                .add(ProductCartAdded(product: productData));
                             Navigator.of(context).pushNamed('/cartpage');
                           },
                           child: const Text(

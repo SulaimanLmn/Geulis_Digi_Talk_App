@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geulis_digitalk/bloc/page_nav_bar_bloc.dart';
+import 'package:geulis_digitalk/bloc/product_cart_bloc.dart';
 import 'package:geulis_digitalk/pages/cart_page.dart';
 import 'package:geulis_digitalk/pages/checkout_page.dart';
 import 'package:geulis_digitalk/pages/login_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => PageNavBarBloc(),
         ),
+        BlocProvider(create: (_) => ProductCartBloc())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

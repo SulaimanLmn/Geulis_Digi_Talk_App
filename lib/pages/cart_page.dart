@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geulis_digitalk/theme/color.dart';
 import 'package:geulis_digitalk/widgets/back_button.dart';
 import 'package:geulis_digitalk/widgets/geulis_appbar.dart';
 import 'package:geulis_digitalk/widgets/product_cart_item.dart';
+import 'package:geulis_digitalk/bloc/product_cart_bloc.dart';
+import 'package:geulis_digitalk/models/product_model.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -27,14 +30,19 @@ class CartPage extends StatelessWidget {
                 child: Container(
                   margin: const EdgeInsets.only(top: 20),
                   width: double.infinity,
-                  child: ListView.separated(
-                      itemBuilder: (context, index) {
-                        return const ProductCartItem();
-                      },
-                      separatorBuilder: (context, index) => const SizedBox(
-                            height: 10,
-                          ),
-                      itemCount: 2),
+                  child: BlocBuilder<ProductCartBloc, List<ProductModel>>(
+                    builder: (context, cart) {
+                      return ListView.separated(
+                        itemBuilder: (context, index) {
+                          return ProductCartItem(product: cart[index]);
+                        },
+                        separatorBuilder: (context, index) => const SizedBox(
+                          height: 10,
+                        ),
+                        itemCount: cart.length,
+                      );
+                    },
+                  ),
                 ),
               ),
               const SizedBox(
@@ -64,23 +72,24 @@ class CartPage extends StatelessWidget {
                     SizedBox(
                       width: 160,
                       child: TextButton(
-                          style: TextButton.styleFrom(
-                            backgroundColor: textColor,
-                            shape: ContinuousRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: textColor,
+                          shape: ContinuousRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/checkoutpage');
-                          },
-                          child: const Text(
-                            "Checkout",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          )),
-                    )
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/checkoutpage');
+                        },
+                        child: const Text(
+                          "Checkout",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
